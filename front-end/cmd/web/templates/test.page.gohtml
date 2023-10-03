@@ -47,7 +47,8 @@
         .then((response) => response.json())
         .then((data) => {
             sent.innerHTML ="empty post request";
-            received.innerHTML = JSON.stringify(data, undefined, 4);
+            const reviecedMsg = JSON.stringify(data, undefined, 4)
+            received.innerHTML = reviecedMsg;
             if (data.error) {
                 console.log(data.message);
             } else {
