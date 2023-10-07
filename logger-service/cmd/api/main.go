@@ -1,9 +1,11 @@
 package main
 
-type Config struct{
-	Models any
+import "log-service/data"
+
+type Config struct {
+	Models data.Models
 }
 
-func main(){
+func main() {
 
 }
