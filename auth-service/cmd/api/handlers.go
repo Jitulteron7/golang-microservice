@@ -3,6 +3,7 @@ package main
 import (
 	"errors"
 	"fmt"
+	"log"
 	"net/http"
 )
 
@@ -35,6 +36,7 @@ func (app *Config) Auth(w http.ResponseWriter, r *http.Request) {
 		app.errorJSON(w, errors.New("invalid creadentials"), http.StatusBadGateway)
 		return
 	}
+
 	payload := jsonResponse{
 		Error:   false,
 		Message: fmt.Sprintf("Logged in user %s", user.Email),
@@ -42,5 +44,20 @@ func (app *Config) Auth(w http.ResponseWriter, r *http.Request) {
 	}
 
 	app.writeJSON(w, http.StatusAccepted, payload)
+
+}
+
+func (app *Config) Hi(w http.ResponseWriter, r *http.Request) {
+
+	payload := jsonResponse{
+		Error:   false,
+		Message: "Hi from auth",
+		Data:    nil,
+	}
+
+	err := app.writeJSON(w, http.StatusOK, payload)
+	if err != nil {
+		log.Panic(err)
+	}
 
 }
