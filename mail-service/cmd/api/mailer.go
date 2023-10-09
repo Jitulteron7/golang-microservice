@@ -155,7 +155,7 @@ func (m *Mail) inlineCSS(s string) (string, error) {
 	return html, nil
 }
 
-func (m *Mail) getEncrytion(s string) mail.Encryption {
+func (m *Mail) getEncryption(s string) mail.Encryption {
 	switch s {
 	case "tls":
 		return mail.EncryptionSTARTTLS
