@@ -9,7 +9,7 @@ up:
 	docker-compose up -d
 	@echo "Docker images started!"
 
-
+# up for build
 up_build: build_broker build_auth build_logger build_mail
 	@echo "Stopping docker images (if running...)"
 	docker-compose down
