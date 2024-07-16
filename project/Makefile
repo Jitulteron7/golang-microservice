@@ -18,6 +18,7 @@ up_build: build_broker build_auth build_logger build_mail
 	@echo "Docker images built and started!"
 
 
+# down
 down:
 	@echo "Stopping docker compose..."
 	docker-compose down
